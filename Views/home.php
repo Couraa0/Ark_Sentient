@@ -514,7 +514,7 @@ if (isset($_SESSION['user_id'])) {
                                 <i class="fas fa-rocket"></i>
                                 Mulai Sekarang
                             </a>
-                            <a href="#demo" class="btn-outline-custom">
+                            <a href="https://youtu.be/clDrE9k0wJQ" class="btn-outline-custom">
                                 <i class="fas fa-play"></i>
                                 Lihat Demo
                             </a>

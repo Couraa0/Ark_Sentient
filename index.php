@@ -98,9 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="text-center">
                         <small>
                             <strong>Demo Login:</strong><br>
-                            <strong>Username:</strong> admin | <strong>Password</strong> 123<br>
-                            <strong>Username:</strong> farmer1 | <strong>Password:</strong> password<br>
-                            <strong>Username:</strong> customer1 | <strong>Password:</strong> password
+                            <strong>Username:</strong> admin | <strong>Password</strong> password<br>
                         </small>
                     </div>
                 </div>
