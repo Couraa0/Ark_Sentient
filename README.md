@@ -12,10 +12,9 @@ Marketplace Ternak Terpercaya - Menghubungkan peternak dengan pembeli secara ama
 - [Struktur Folder](#struktur-folder)
 - [Demo Login](#demo-login)
 - [Teknologi yang Digunakan](#teknologi-yang-digunakan)
-- [Kontribusi](#kontribusi)
-- [Lisensi](#lisensi)
-- [Kontak](#kontak)
 - [Tim Pengembang](#tim-pengembang)
+- [Kontribusi](#kontribusi)
+
 
 ---
 
