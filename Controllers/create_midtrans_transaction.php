@@ -103,6 +103,18 @@ try {
     exit;
 }
 
+// Load .env jika belum (simple loader)
+$env_path = dirname(__DIR__) . '/.env';
+if (file_exists($env_path)) {
+    $lines = file($env_path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0 || strpos(trim($line), '=') === false) continue;
+        list($name, $value) = array_map('trim', explode('=', $line, 2));
+        $value = trim($value, "\"'");
+        if (!getenv($name)) putenv("$name=$value");
+    }
+}
+
 // Konfigurasi Midtrans
 $autoload_path = '../vendor/autoload.php';
 if (!file_exists($autoload_path)) {
@@ -115,10 +127,14 @@ require_once($autoload_path);
 use Midtrans\Config as MidtransConfig;
 use Midtrans\Snap as MidtransSnap;
 
-// Konfigurasi Midtrans - GANTI dengan server key dan client key sandbox yang benar
-MidtransConfig::$serverKey = 'SB-Mid-server-GwLRQ5d1aYnYZg707UFbBo_t';
-MidtransConfig::$clientKey = 'SB-Mid-client-vVJ0R4QSenoK7QLI';
-MidtransConfig::$isProduction = false; // Gunakan sandbox
+// Ambil konfigurasi dari env
+$midtransServerKey = getenv('MIDTRANS_SERVER_KEY');
+$midtransClientKey = getenv('MIDTRANS_CLIENT_KEY');
+$midtransIsProduction = getenv('MIDTRANS_IS_PRODUCTION') === 'true' ? true : false;
+
+MidtransConfig::$serverKey = $midtransServerKey;
+MidtransConfig::$clientKey = $midtransClientKey;
+MidtransConfig::$isProduction = $midtransIsProduction;
 MidtransConfig::$isSanitized = true;
 MidtransConfig::$is3ds = true;
 

@@ -4,7 +4,8 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 
 $host = 'localhost';
-$db   = 'e11'; 
+// Ganti 'e11' dengan nama database yang benar, misal 'ark_sentient'
+$db   = 'e1'; 
 $user = 'root';           
 $pass = '';               
 $charset = 'utf8mb4';
